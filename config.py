@@ -1,5 +1,5 @@
-height = 500
-width = 500
+height = 200
+width = 200
 
 buttonGridTemp = {
     "width"  : 1/12,
