@@ -49,7 +49,7 @@ class tablero:
         
         number2.place(
             x = labelGridTemp["width"]*width + 25, 
-            y = labelGridTemp["height"]*height + 40
+            y = labelGridTemp["height"]*height + 60
         )
           
     def botones(self) -> None:

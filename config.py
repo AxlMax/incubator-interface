@@ -6,16 +6,16 @@ delta = 0.2
 buttonGridTemp = {
     "width"  : 1/12,
     "height" : 2/3,
-    "wsize"  : 1/80,
-    "hsize"  : 1/80,
+    "wsize"  : 1/100,
+    "hsize"  : 1/100,
     "text"   : "▲",
 }
 
 buttonGridTemp2 = {
     "width"  : 5/12,
     "height" : 2/3,
-    "wsize"  : 1/80,
-    "hsize"  : 1/80,
+    "wsize"  : 1/100,
+    "hsize"  : 1/100,
     "text" :"▼",
 }
 
@@ -29,16 +29,16 @@ labelGridTemp = {
 buttonGridHum = {
     "width"  : 1/12 + 1/2,
     "height" : 2/3,
-    "wsize"  : 1/80,
-    "hsize"  : 1/80,
+    "wsize"  : 1/100,
+    "hsize"  : 1/100,
     "text" : "▲",
 }
 
 buttonGridHum2 = {
     "width"  : 5/12 + 1/2,
     "height" : 2/3,
-    "wsize"  : 1/80,
-    "hsize"  : 1/80,
+    "wsize"  : 1/100,
+    "hsize"  : 1/100,
     "text" : "▼",
 }
 
