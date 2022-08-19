@@ -31,6 +31,7 @@ if __name__ == "__main__":
     top = Tk()
 
     top.title("incubatorVHM")
+    top.attributes('-fullscreen', True)
 
     top.geometry(f"{width}x{height}")
 
@@ -46,4 +47,6 @@ if __name__ == "__main__":
     numberH = tableroH.getNumber()
     refreshH()
 
+    top.bind('<Escape>',lambda e: top.destroy())
+    
     top.mainloop()
