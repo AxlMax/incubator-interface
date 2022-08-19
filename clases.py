@@ -8,10 +8,9 @@ class tablero:
         self.master = master
         self.config = config
         self.numbervar1 = IntVar()        
+        self.delta = 0.2
         self.letras()
         self.botones()
-        
-        self.delta = 0.2
         
     def letras (self) -> None:
         
