@@ -21,7 +21,7 @@ labelGridTemp = {
     "text"   : "Temperatura",
     "width"  : 1/8,
     "height" : 0,
-    "font"   :("Arial", 13),
+    "font"   :("Arial", 5),
 }
 
 buttonGridHum = {
@@ -44,5 +44,5 @@ labelGridHum = {
     "text"   : "Humedad",
     "width"  : 1/8 + 0.6,
     "height" : 0,
-    "font"   :("Arial", 13),
+    "font"   :("Arial", 5),
 }
