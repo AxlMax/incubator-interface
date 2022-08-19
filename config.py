@@ -1,7 +1,7 @@
 height = 200
 width = 200
 titleSize = 8
-delta = 0.2
+delta = 0.2 
 
 buttonGridTemp = {
     "width"  : 1/12,

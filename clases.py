@@ -11,9 +11,11 @@ class tablero:
         self.letras()
         self.botones()
         
+        self.delta = 0.2
+        
     def letras (self) -> None:
         
-        buttonGridTemp, buttonGridTemp2, labelGridTemp, width, height, delta = self.config
+        buttonGridTemp, buttonGridTemp2, labelGridTemp, width, height = self.config
         
         label = Label(
             self.master,
@@ -26,13 +28,13 @@ class tablero:
         self.number = Label(
             self.master,
             text = "5",
-            font = (font, numberSize + 50*delta),
+            font = (font, numberSize + 50*self.delta),
         )
         
         number2 = Label(
             self.master,
             textvariable = self.numbervar1,
-            font         = (font, numberSize + 50*delta),
+            font         = (font, numberSize + 50*self.delta),
         )
         
         label.place(
