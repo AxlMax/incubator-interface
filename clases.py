@@ -8,7 +8,7 @@ class tablero:
         self.master = master
         self.config = config
         self.numbervar1 = IntVar()        
-        self.delta = 0.2
+        self.delta = 0.3
         
         self.letras()
         self.botones()
@@ -44,12 +44,12 @@ class tablero:
         
         self.number.place(
             x = labelGridTemp["width"]*width + 25, 
-            y = labelGridTemp["height"]*height + 30
+            y = labelGridTemp["height"]*height + 50
         )
         
         number2.place(
             x = labelGridTemp["width"]*width + 25, 
-            y = labelGridTemp["height"]*height + 80
+            y = labelGridTemp["height"]*height + 100
         )
           
     def botones(self) -> None:

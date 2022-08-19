@@ -1,6 +1,6 @@
 height = 300
 width = 500
-titleSize = 15
+titleSize = 20
 delta = 0.2 
 
 buttonGridTemp = {
