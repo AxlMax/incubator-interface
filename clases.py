@@ -9,6 +9,7 @@ class tablero:
         self.config = config
         self.numbervar1 = IntVar()        
         self.delta = 0.2
+        
         self.letras()
         self.botones()
         
@@ -27,13 +28,13 @@ class tablero:
         self.number = Label(
             self.master,
             text = "5",
-            font = (font, numberSize + 50*self.delta),
+            font = (font, int(numberSize + 50*self.delta)),
         )
         
         number2 = Label(
             self.master,
             textvariable = self.numbervar1,
-            font         = (font, numberSize + 50*self.delta),
+            font         = (font, int(numberSize + 50*self.delta)),
         )
         
         label.place(
