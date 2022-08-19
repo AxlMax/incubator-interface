@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import messagebox
 from pythonSerial import *
 
 class tablero:
