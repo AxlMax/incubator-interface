@@ -8,7 +8,6 @@ def refreshT():
     values = getValues()
     
     try:
-        print()
         numberT.configure(text = values["temperatura"])
     except:
         print("error on refresh")
@@ -19,7 +18,6 @@ def refreshH():
     values = getValues()
     
     try:
-        print()
         numberH.configure(text = values["humedad"])
     except:
         print("error on refresh")
