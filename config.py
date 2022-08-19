@@ -1,4 +1,4 @@
-height = 500
+height = 300
 width = 500
 titleSize = 15
 delta = 0.2 
