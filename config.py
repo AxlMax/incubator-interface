@@ -1,6 +1,6 @@
-height = 200
-width = 200
-titleSize = 8
+height = 500
+width = 500
+titleSize = 15
 delta = 0.2 
 
 buttonGridTemp = {
@@ -23,7 +23,7 @@ labelGridTemp = {
     "text"   : "Temperatura",
     "width"  : 1/8,
     "height" : 0,
-    "font"   :("Arial", 8),
+    "font"   :("Arial", titleSize),
 }
 
 buttonGridHum = {
