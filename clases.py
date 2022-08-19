@@ -13,7 +13,7 @@ class tablero:
         
     def letras (self) -> None:
         
-        buttonGridTemp, buttonGridTemp2, labelGridTemp, width, height = self.config
+        buttonGridTemp, buttonGridTemp2, labelGridTemp, width, height, delta = self.config
         
         label = Label(
             self.master,
@@ -26,13 +26,13 @@ class tablero:
         self.number = Label(
             self.master,
             text = "5",
-            font = (font, numberSize + 50),
+            font = (font, numberSize + 50*delta),
         )
         
         number2 = Label(
             self.master,
             textvariable = self.numbervar1,
-            font         = (font, numberSize + 50),
+            font         = (font, numberSize + 50*delta),
         )
         
         label.place(
