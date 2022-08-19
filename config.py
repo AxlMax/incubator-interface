@@ -12,7 +12,7 @@ buttonGridTemp = {
 }
 
 buttonGridTemp2 = {
-    "width"  : 5/12,
+    "width"  : 4/12,
     "height" : 2/3,
     "wsize"  : 1/100,
     "hsize"  : 1/100,
@@ -35,7 +35,7 @@ buttonGridHum = {
 }
 
 buttonGridHum2 = {
-    "width"  : 5/12 + 1/2,
+    "width"  : 4/12 + 1/2,
     "height" : 2/3,
     "wsize"  : 1/100,
     "hsize"  : 1/100,
@@ -44,7 +44,7 @@ buttonGridHum2 = {
 
 labelGridHum = {
     "text"   : "Humedad",
-    "width"  : 1/8 + 0.6,
+    "width"  : 1/8 + 0.5,
     "height" : 0,
     "font"   :("Arial", titleSize),
 }
