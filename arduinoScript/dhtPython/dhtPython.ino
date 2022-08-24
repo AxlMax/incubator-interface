@@ -17,7 +17,7 @@ void blink(int);
 void setup(){
     Serial.begin(freq);
     
-    pinMode(LED_BUILDIN, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
     pinMode(resPin, OUTPUT);
     pinMode(humPin, OUTPUT);
     pinMode(v1Pin,  OUTPUT);
@@ -28,12 +28,12 @@ void setup(){
 
 void loop(){
     blink(2);
-    Serial.Println("hola como estas");
+    Serial.println("hola como estas");
 }
 
 void blink(int dt){
-    digitalWrite(LED_BUILDIN, HIGH);
+    digitalWrite(LED_BUILTIN, HIGH);
     delay(dt*1000);
-    digitalWrite(LED_BUILDIN, LOW);
+    digitalWrite(LED_BUILTIN, LOW);
 }
 
