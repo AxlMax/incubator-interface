@@ -7,10 +7,11 @@
 #define v1Pin 6
 #define v2Pin 7
 #define freq 115200
-
 #define DHTTYPE DHT11
- 
+
+String inputString; 
 DHT dht(DHTPIN, DHTTYPE);
+JSONVar myObject;
 
 void blink(int);
 void getData();
@@ -39,8 +40,7 @@ void getData() {
 
     float h = dht.readHumidity();
     float t = dht.readTemperature();
-    JSONVar myObject;
-
+    
     myObject["temperatura"] = t;
     myObject["humedad"] = h;
 
