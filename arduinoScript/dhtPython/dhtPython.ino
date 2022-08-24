@@ -28,7 +28,14 @@ void setup(){
 
 void loop(){
     blink(2);
-    Serial.println("hola como estas");
+    float h = dht.readHumidity();
+    float t = dht.readTemperature();
+    
+    Serial.print("Humedad: ");
+    Serial.print(h);
+    Serial.print(" %\t");
+    Serial.print("Temperatura: ");
+    Serial.println(t)
 }
 
 void blink(int dt){
