@@ -1,6 +1,7 @@
 
 #include <DHT.h>
- 
+#include <ArduinoJson.h>
+
 #define DHTPIN 3
 #define resPin 4
 #define humPin 5
@@ -11,6 +12,7 @@
 #define DHTTYPE DHT11
  
 DHT dht(DHTPIN, DHTTYPE);
+StaticJsonDocument<200> doc;
 
 void blink(int);
 
@@ -27,20 +29,20 @@ void setup(){
 }
 
 void loop(){
-    blink(2);
+    blink(1);
     float h = dht.readHumidity();
     float t = dht.readTemperature();
-    
-    Serial.print("Humedad: ");
-    Serial.print(h);
-    Serial.print(" %\t");
-    Serial.print("Temperatura: ");
-    Serial.println(t);
+
+    doc["temperatura"] = randNumber;
+    doc["humedad"] = randNumber;
+      
+    serializeJson(doc, Serial);
+    Serial.println(); 
 }
 
 void blink(int dt){
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(resPin, HIGH);
     delay(dt*1000);
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(resPin, LOW);
 }
 
