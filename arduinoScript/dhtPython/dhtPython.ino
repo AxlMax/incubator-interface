@@ -35,7 +35,7 @@ void loop(){
     Serial.print(h);
     Serial.print(" %\t");
     Serial.print("Temperatura: ");
-    Serial.println(t)
+    Serial.println(t);
 }
 
 void blink(int dt){
