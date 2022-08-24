@@ -12,6 +12,9 @@
  
 DHT dht(DHTPIN, DHTTYPE);
 
+void blink(int);
+void getData();
+
 void setup() {
     
     Serial.begin(freq);
@@ -24,11 +27,11 @@ void setup() {
 
     dht.begin();
     while (!Serial);
-
-    getData();
 }
 
 void loop() {
+    blink(1);
+    getData();
 }
 
 void getData() {
@@ -43,7 +46,11 @@ void getData() {
     String jsonString = JSON.stringify(myObject);
 
     Serial.println(jsonString);
-    
+
 }
 
-
+void blink(int dt){
+    digitalWrite(resPin, HIGH);
+    delay(dt*1000);
+    digitalWrite(resPin, LOW);
+}
