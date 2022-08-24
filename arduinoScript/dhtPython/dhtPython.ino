@@ -28,6 +28,7 @@ void setup(){
 
 void loop(){
     blink(2);
+    Serial.Println("hola como estas");
 }
 
 void blink(int dt){
