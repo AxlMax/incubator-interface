@@ -14,6 +14,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 void blink(int);
 void getData();
+void SerialEvent();
 
 void setup() {
     
@@ -31,7 +32,7 @@ void setup() {
 
 void loop() {
     blink(1);
-    getData();
+    SerialEvent();
 }
 
 void getData() {
@@ -40,8 +41,8 @@ void getData() {
     float t = dht.readTemperature();
     JSONVar myObject;
 
-    myObject["temperatura"] = h;
-    myObject["humedad"] = t;
+    myObject["temperatura"] = t;
+    myObject["humedad"] = h;
 
     String jsonString = JSON.stringify(myObject);
 
@@ -53,4 +54,15 @@ void blink(int dt){
     digitalWrite(resPin, HIGH);
     delay(dt*1000);
     digitalWrite(resPin, LOW);
+}
+
+void SerialEvent(){
+  while(Serial.available()){
+    char inputChar = Serial.read();
+    inputString += inputChar;
+    }
+    if(inputString.indexOf("getValue")>=0){
+        getData();
+    } 
+    inputString = "";
 }
