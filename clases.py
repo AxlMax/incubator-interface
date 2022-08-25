@@ -57,11 +57,11 @@ class tablero:
         
         def buttonCallBackplus():
                 self.numbervar1.set(self.numbervar1.get() + 1)
-                writeSerial(self.indentificator)
+                writeSerial(self.indentificator + ":" + str(self.numbervar1.get() + 1))
                 
         def buttonCallBackless():
                 self.numbervar1.set(self.numbervar1.get() - 1)
-                writeSerial(self.indentificator)
+                writeSerial(self.indentificator + ":" + str(self.numbervar1.get() + 1))
                 
         buttonGridTemp, buttonGridTemp2, labelGridTemp, width, height = self.config
         
