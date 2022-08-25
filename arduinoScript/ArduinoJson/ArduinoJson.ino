@@ -44,7 +44,7 @@ void loop() {
 
     if(tempActual != 0){
         tempAmbiente = dht.readTemperature();
-        validationTemp()
+        validationTemp();
     }
 
     if(humActual != 0){
@@ -116,7 +116,7 @@ void validationTemp(){
 }
 
 void validationHum(){
-        if(HumActual > HumAmbiente){
+        if(humActual > humAmbiente){
         digitalWrite(v1Pin, HIGH);
         digitalWrite(v2Pin, LOW);
     }else{
