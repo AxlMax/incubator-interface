@@ -3,12 +3,13 @@ from pythonSerial import *
 
 class tablero:
     
-    def __init__(self, master, config) -> None:
+    def __init__(self, master, config, inde) -> None:
         
         self.master = master
         self.config = config
         self.numbervar1 = IntVar()        
         self.delta = 0.3
+        self.indentificator = inde
         
         self.letras()
         self.botones()
@@ -56,10 +57,11 @@ class tablero:
         
         def buttonCallBackplus():
                 self.numbervar1.set(self.numbervar1.get() + 1)
-                getValues()
+                writeSerial(self.indentificator)
                 
         def buttonCallBackless():
                 self.numbervar1.set(self.numbervar1.get() - 1)
+                writeSerial(self.indentificator)
                 
         buttonGridTemp, buttonGridTemp2, labelGridTemp, width, height = self.config
         

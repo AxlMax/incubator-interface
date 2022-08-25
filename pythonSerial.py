@@ -31,5 +31,5 @@ def getValues():
     except:
         print("Exception occurred, somthing wrong...")
     
-    def writeSerial(value):
-        conn.write(str(value).encode('utf8'))
+def writeSerial(value):
+    conn.write(str(value).encode('utf8'))

@@ -13,7 +13,7 @@ String inputString;
 DHT dht(DHTPIN, DHTTYPE);
 JSONVar myObject;
 
-void blink(int);
+void blink(int, int);
 void getData();
 void SerialEvent();
 
@@ -32,7 +32,7 @@ void setup() {
 }
 
 void loop() {
-    blink(1);
+    blink(v1Pin,1);
     SerialEvent();
 }
 
@@ -50,10 +50,10 @@ void getData() {
 
 }
 
-void blink(int dt){
-    digitalWrite(resPin, HIGH);
+void blink(int pin,int dt){
+    digitalWrite(pin, HIGH);
     delay(dt*1000);
-    digitalWrite(resPin, LOW);
+    digitalWrite(pin, LOW);
 }
 
 void SerialEvent(){
@@ -61,8 +61,18 @@ void SerialEvent(){
     char inputChar = Serial.read();
     inputString += inputChar;
     }
+
     if(inputString.indexOf("getValue")>=0){
         getData();
+    }
+
+    if(inputString.indexOf("T") >= 0){
+        blink(resPin,1);
     } 
+
+    if(inputString.indexOf("H") >= 0){
+        blink(humPin,1);
+    }
+
     inputString = "";
 }
