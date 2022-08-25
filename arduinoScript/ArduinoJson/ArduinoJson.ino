@@ -16,6 +16,14 @@ JSONVar myObject;
 void blink(int, int);
 void getData();
 void SerialEvent();
+void validationTemp();
+void validationHum();
+
+unsigned int tempActual = 0;
+unsigned int humActual  = 0;
+
+unsigned int tempAmbiente = 0;
+unsigned int humAmbiente  = 0;
 
 void setup() {
     
@@ -32,8 +40,18 @@ void setup() {
 }
 
 void loop() {
-    blink(v1Pin,1);
     SerialEvent();
+
+    if(tempActual != 0){
+        tempAmbiente = dht.readTemperature();
+        validationTemp()
+    }
+
+    if(humActual != 0){
+        humAmbiente = dht.readHumidity();
+        validationHum();
+    }
+    
 }
 
 void getData() {
@@ -62,17 +80,48 @@ void SerialEvent(){
     inputString += inputChar;
     }
 
+    int limitSup = 0;
+    int limitInf = 0;
+
     if(inputString.indexOf("getValue")>=0){
         getData();
     }
 
     if(inputString.indexOf("T") >= 0){
-        blink(resPin,1);
+        limitSup = inputString.indexOf(":") + 1;
+        limitInf = inputString.length();
+
+        tempActual = inputString.substring(limitSup, limitInf).toFloat();
     } 
 
     if(inputString.indexOf("H") >= 0){
-        blink(humPin,1);
+        limitSup = inputString.indexOf(":") + 1;
+        limitInf = inputString.length();
+
+        humActual = inputString.substring(limitSup, limitInf).toFloat();
     }
 
     inputString = "";
+}
+
+void validationTemp(){
+    if(tempActual > tempAmbiente){
+        digitalWrite(v1Pin, HIGH);
+        digitalWrite(v2Pin, LOW);
+    }else{
+        digitalWrite(v1Pin, HIGH);
+        digitalWrite(v2Pin, HIGH);
+        digitalWrite(resPin, LOW);
+    }
+}
+
+void validationHum(){
+        if(HumActual > HumAmbiente){
+        digitalWrite(v1Pin, HIGH);
+        digitalWrite(v2Pin, LOW);
+    }else{
+        digitalWrite(v1Pin, HIGH);
+        digitalWrite(v2Pin, HIGH);
+        digitalWrite(humPin, LOW);
+    }
 }
